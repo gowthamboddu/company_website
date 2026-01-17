@@ -18,15 +18,19 @@
 <!-- ================= HEADER / NAV ================= -->
 <header>
   <div class="container nav">
-    <div class="logo">OurTechnologies</div>
+    <a href="{% url 'home' %}" class="logo">
+        <img src="{% static 'website/assets/logo/logo.png' %}" alt="OurTechnologies Logo">
+        <span>OurTechnologies</span>
+    </a>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#why">Why Us</a></li>
-        <li><a href="#contact" class="btn">Contact</a></li>
+        <li><a href="/" class="nav-link active">Home</a></li>
+<!--        <li><a href="#about" class="nav-link">About</a></li>-->
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#why" class="nav-link">Why Us</a></li>
+        <li><a href="#client_testimonials" class="nav-link">Client Testimonials</a></li>
+        <li><a href="#contact" class="nav-link btn">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -92,6 +96,49 @@
   </div>
 </section>
 
+
+<!-- ================= PORTFOLIO / EXPERIENCE ================= -->
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Experience</h2>
+      <p>Real-world platforms we’ve designed, built, and scaled.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>Music Institute Management System</h3>
+        <p>
+          We built a complete digital platform for a music institute,
+          handling student admissions, course enrollments, attendance,
+          fee payments, renewals, and instructor scheduling.
+        </p>
+        <p>
+          The system was designed to scale across multiple branches with
+          secure role-based access and automated notifications.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Leads & CRM Management Platform</h3>
+        <p>
+          Designed and developed a powerful leads management system
+          to track inquiries, follow-ups, lead stages, responses,
+          and conversions.
+        </p>
+        <p>
+          Built with performance, analytics, and automation in mind,
+          enabling businesses to improve conversion rates and
+          sales visibility.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 <!-- ================= WHY US ================= -->
 <section id="why" class="why">
   <div class="container">
@@ -129,7 +176,7 @@
 </section>
 
 <!-- ================= TESTIMONIALS ================= -->
-<section class="testimonials">
+<section id="client_testimonials" class="testimonials">
   <div class="container">
     <div class="section-title">
       <h2>Client Testimonials</h2>
@@ -191,6 +238,33 @@
     <p>© 2026 OurTechnologies. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function activateNavLink() {
+    let scrollY = window.pageYOffset + 120; // offset for sticky header
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute("id");
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${sectionId}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener("scroll", activateNavLink);
+</script>
+
 
 </body>
 </html>

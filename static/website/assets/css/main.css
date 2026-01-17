@@ -275,3 +275,50 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111;
+    text-decoration: none;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.logo:hover {
+    opacity: 0.9;
+}
+
+
+nav li a {
+  position: relative;
+  padding-bottom: 6px;
+}
+
+/* underline */
+nav li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+/* hover underline */
+nav li a:hover::after {
+  width: 100%;
+}
+
+/* active underline */
+nav li a.active::after {
+  width: 100%;
+}
