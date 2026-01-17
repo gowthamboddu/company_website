@@ -1,6 +1,6 @@
 Remove Git from project
 
-cd /path/to/your/MusicInstitute
+cd /path/to/your/project
 
 rm -rf .git
 
@@ -10,7 +10,7 @@ you will see "fatal: not a git repository"
 
 initiate git to project
 
-cd /path/to/your/MusicInstitute
+cd /path/to/your/project
 
 git init
 git add .
