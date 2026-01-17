@@ -10,3 +10,4 @@ secrets.yml.enc
 *.pyo
 staticfiles
 stacic/website/.idea
+db.sqlite3
