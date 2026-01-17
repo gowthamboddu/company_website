@@ -11,3 +11,4 @@ secrets.yml.enc
 staticfiles
 stacic/website/.idea
 db.sqlite3
+static

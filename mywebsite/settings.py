@@ -58,10 +58,10 @@ DATABASES = {
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / 'content' / 'assets',
 ]
 
-# 🔴 THIS LINE FIXES YOUR ERROR
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'static'
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
