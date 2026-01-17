@@ -1,0 +1,22 @@
+Remove Git from project
+
+cd /path/to/your/MusicInstitute
+
+rm -rf .git
+
+git status
+
+you will see "fatal: not a git repository"
+
+initiate git to project
+
+cd /path/to/your/MusicInstitute
+
+git init
+git add .
+git commit -m "Initial commit"
+
+
+git remote add origin https://github.com/yourusername/your-new-repo.git
+git branch -M main
+git push -u origin main

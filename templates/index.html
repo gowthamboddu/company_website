@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>OurTechnologies | Premium IT Services & Software Development</title>
+
+  <meta name="description" content="OurTechnologies is a premium IT services & software development company specializing in Django, full-stack development, SaaS products, and API integrations." />
+  <meta name="keywords" content="OurTechnologies, Django Development, Full Stack, SaaS, API Integration, Software Company" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="{% static 'website/assets/css/main.css' %}">
+</head>
+<body>
+
+<!-- ================= HEADER / NAV ================= -->
+<header>
+  <div class="container nav">
+    <div class="logo">OurTechnologies</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact" class="btn">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Enterprise-Grade Software Solutions Built for Growth</h1>
+      <p>
+        OurTechnologies helps startups, businesses, and enterprises build
+        scalable, secure, and high-performance digital products using proven
+        engineering practices.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn">Get a Quote</a>
+        <a href="#services" class="btn secondary">View Services</a>
+      </div>
+    </div>
+    <div>
+      <img src="{% static 'website/assets/images/hero.svg' %}" alt="Software Development Illustration">
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Comprehensive IT services designed to scale with your business.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="{% static 'website/assets/images/service-web.svg' %}" alt="Web Development">
+        <h3>Web & Full-Stack Development</h3>
+        <p>
+          Robust Django-based systems with clean architecture, security,
+          and performance focus.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img src="{% static 'website/assets/images/service-api.svg' %}" alt="API Integration">
+        <h3>API Integrations</h3>
+        <p>
+          Secure and reliable integrations with third-party services,
+          payment gateways, and internal platforms.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <img src="{% static 'website/assets/images/service-saas.svg' %}" alt="SaaS Development">
+        <h3>SaaS Product Development</h3>
+        <p>
+          End-to-end SaaS engineering from MVP to enterprise-ready
+          multi-tenant platforms.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section id="why" class="why">
+  <div class="container">
+    <div class="section-title">
+      <h2>Why Choose OurTechnologies</h2>
+      <p>We think like business owners, engineers, and users—at the same time.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-box">
+        <h3>Senior-Level Engineering</h3>
+        <p>
+          Years of real-world experience delivering production-ready systems
+          for startups and enterprises.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <h3>Scalable Architecture</h3>
+        <p>
+          Systems designed to grow with your business, supporting high traffic,
+          security, and future expansion.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <h3>Trust & Transparency</h3>
+        <p>
+          Clear communication, realistic timelines, and long-term partnerships
+          built on trust.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-title">
+      <h2>Client Testimonials</h2>
+      <p>What our clients say about working with us.</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>
+          “OurTechnologies delivered a rock-solid platform that scaled
+          effortlessly with our growth.”
+        </p>
+        <strong>— Startup Founder</strong>
+      </div>
+
+      <div class="testimonial">
+        <p>
+          “Professional, reliable, and deeply technical. Exactly what we needed.”
+        </p>
+        <strong>— Enterprise IT Manager</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact">
+  <div class="container contact-grid">
+    <div>
+      <h2>Let’s Build Something Great</h2>
+      <p>
+        Tell us about your project and we’ll get back to you within 24 hours.
+      </p>
+    </div>
+
+    <form method="POST" action="{% url 'contact:add_contact' %}">
+      {% csrf_token %}
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+
+      <small style="color:#6c757d; display:block; margin-top:-12px;">
+        For India, enter your 10-digit number only.
+        For other countries, include country code.
+      </small>
+
+      <textarea name="message" rows="4" placeholder="Project Details"></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <p>© 2026 OurTechnologies. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
